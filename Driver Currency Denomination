@@ -1,0 +1,32 @@
+package com.greatlearning.main;
+
+import com.greatlearning.service.mergeSort;
+import com.greatlearning.service.NotesCount;
+
+import java.util.Scanner;
+
+public class Driver {
+		
+	public static void main(String[] args) {
+		mergeSort MergeSort = new mergeSort();
+		NotesCount notesCount = new NotesCount();
+		int amountToPay, noOfDeno;
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Enter the total currency denomination");
+		noOfDeno = in.nextInt();
+		int valueDeno[] = new int[noOfDeno];
+		
+		System.out.println("Enter value of denomination");
+		for(int i=0; i<noOfDeno; i++) {
+			valueDeno[i] = in.nextInt();
+		}
+		
+		System.out.println("Enter the amount to pay");
+		amountToPay = in.nextInt();
+		
+		MergeSort.sort(valueDeno,0,valueDeno.length-1);
+		notesCount.notesCountImplementation(valueDeno, amountToPay);
+		in.close();
+	}
+}
