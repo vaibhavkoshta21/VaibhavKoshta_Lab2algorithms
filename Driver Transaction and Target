@@ -1,0 +1,14 @@
+package com.greatlearning.main;
+
+import com.greatlearning.service.NoOfTransaction;
+
+
+public class Driver {
+
+	public static void main(String[] args) {
+		NoOfTransaction nt = new NoOfTransaction();
+		nt.target();
+		
+	}
+
+}
