@@ -1,0 +1,50 @@
+package com.greatlearning.service;
+
+import java.util.Scanner;
+
+public class NoOfTransaction {
+	public int arrLen, sum=0, t, NoTarget;
+	
+	public void target() {
+		System.out.println("Enter the length of array");
+		Scanner in = new Scanner(System.in);
+		arrLen = in.nextInt();
+		int arrTran[] = new int[arrLen];
+		
+		System.out.println("Enter array elements");
+		for(int i=0; i<arrLen; i++) {
+			arrTran[i] = in.nextInt();
+		}
+		System.out.println("Enter the number of target to be achieved");
+		NoTarget = in.nextInt();
+		
+		System.out.println("Enter the target values");
+		int NoTargetValue[] = new int[NoTarget];
+		for(int g=0; g<NoTarget; g++) {
+			NoTargetValue[g] = in.nextInt();
+		}
+		
+		for(int k=0; k<NoTarget; k++) {
+			for(int j=0; j<arrLen; j++) {
+				sum = sum + arrTran[j];
+				if(sum >= NoTargetValue[k]) {
+					System.out.println(NoTargetValue[k]+" Target is Achieved at "+ (j+1)+ " Transaction");
+					break;
+				}
+				//else{
+					//System.out.println("Target Not Achieved");
+				//}
+				//if(sum >= NoTargetValue[1]) {
+					//System.out.println("Target is Achieved at "+ (j+1)+ " Transaction");
+					//break;
+				//}
+			}
+			if(sum < NoTargetValue[k]) {
+				System.out.println(NoTargetValue[k]+ " Target Not Achieved");
+			}
+			sum = 0;
+		}
+		
+		in.close();
+	}
+}
